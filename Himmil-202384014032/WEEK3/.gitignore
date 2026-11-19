@@ -1,0 +1,29 @@
+# ---- dependencies / build output ----
+node_modules/
+dist/
+target/
+*.class
+*.jar
+!back-end/.mvn/wrapper/maven-wrapper.jar
+*.log
+
+# ---- IDE ----
+.idea/
+*.iml
+.vscode/
+*.iws
+*.ipr
+.settings/
+.classpath
+.project
+
+# ---- runtime data ----
+back-end/uploads/
+uploads/
+back-end/target/
+back-end/logs/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
