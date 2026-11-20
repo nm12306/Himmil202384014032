@@ -1,7 +1,7 @@
 # WEEK3 · Project Initiation, Requirement Analysis, and Frontend-Backend Skeleton
 
 > **Project**: employment in higher education institutions, Shaanxi University of Technology  
-> **Student ID**: 202384014032 | **Progress**: 1/9 | **Snapshot Directory**: `WEEK3/`
+> **Student ID**: 202384014032 | **Progress**: WEEK3 | **Snapshot Directory**: `WEEK3/`
 
 ---
 
@@ -105,7 +105,7 @@ This way, we retain MyBatis-Plus's `BaseMapper` capabilities while bypassing the
 | --- | --- | --- |
 | Backend REST API | 0 | 0 |
 | Frontend Pages | 0 | 0 |
-| Database Tables | 0 (tables to be created next day) | 0 |
+| Database Tables | 0 (created in later weeks) | 0 |
 
 
 ## 6. How to Run This Snapshot

@@ -1,12 +1,12 @@
 # WEEK3 · Project initiation, requirements analysis, and front-end & back-end framework
 
 > Employment in higher education institutions
-> ID：202384014032　|　Progress：1/9
+> ID：202384014032　|　Progress：WEEK3
 > Add New File：**29** 
 
 ## 1.What is this snapshot?
 
-`WEEK3/` This is the **complete project snapshot at the end of Day 1**: it includes all the source code, configurations, and documentation
+`WEEK3/` This is the **complete project snapshot at the end of WEEK3**: it includes all the source code, configurations, and documentation
 
 ## 2.Progress Overview
 
@@ -22,29 +22,25 @@
 
 ```text
 WEEK3/
-├─ back-end/                  Spring Boot 4 后端（Maven 工程）
+├─ back-end/                          Spring Boot 4 后端（Maven 工程）
 │  ├─ src/main/java/org/example/backend/
-│  │  ├─ controller/           REST 控制器
-│  │  ├─ service/ + impl/      业务接口与实现
-│  │  ├─ mapper/               MyBatis-Plus Mapper
-│  │  ├─ entity/ dto/ vo/      数据模型
-│  │  ├─ config/ interceptor/ filter/ aspect/   基础设施
-│  │  └─ common/ util/ exception/ annotation/   公共能力
-│  ├─ src/main/resources/
-│  │  ├─ application.yml       端口、数据源、Redis、MyBatis-Plus 配置
-│  │  ├─ mapper/*.xml          复杂 SQL
-│  │  └─ sql/init.sql          建库建表与初始化数据
-│  └─ pom.xml
-├─ front-end/                 Vue 2 + Element UI 前端（Vue CLI 5）
-│  ├─ src/api/                接口封装
-│  ├─ src/views/user|admin/   用户端 / 管理端页面
-│  ├─ src/layout/             布局组件
-│  ├─ src/router/             
-│  └─ package.json
-├─ import-test-fixtures/      Excel 导入模板夹具（第 8 天加入）
-├─ WEEK3-工作日志.md      本日工作日志（与根目录文档一一对应）
-├─ README.md                  本文件
-└─ .gitignore                 依赖、构建产物、IDE、运行时上传目录
+│  │  ├─ BackEndApplication.java       Spring Boot 启动类
+│  │  ├─ common/                      Result / PageResult / Constants
+│  │  ├─ config/                      MyBatis-Plus 与 Redis 配置
+│  │  ├─ exception/                   业务异常与全局异常处理
+│  │  └─ util/                        JWT 与 BCrypt 工具
+│  ├─ src/main/resources/application.yml    端口、数据源、Redis、MyBatis-Plus
+│  ├─ src/test/java/org/example/backend/     上下文加载测试
+│  ├─ .mvn/wrapper/                   Maven Wrapper 配置
+│  └─ pom.xml                         Maven 依赖与构建配置
+├─ front-end/                         Vue 2 + Element UI 前端（Vue CLI 5）
+│  ├─ public/                         HTML 模板与站点图标
+│  ├─ src/assets/                     站点 Logo
+│  ├─ package.json / package-lock.json      依赖与依赖锁定
+│  └─ vue.config.js                   开发服务器 8080，代理 /api、/uploads 到 8088
+├─ WEEK3-工作日志.md                   本快照工作日志
+├─ README.md                          本文件
+└─ .gitignore                         依赖、构建产物、IDE、运行时目录
 ```
 
 ## 4. Running Mode
