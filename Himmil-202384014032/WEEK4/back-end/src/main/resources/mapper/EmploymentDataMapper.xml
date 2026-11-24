@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.backend.mapper.EmploymentDataMapper">
+
+    <!-- 多条件分页查询就业数据 -->
+    <select id="selectByConditions" resultType="org.example.backend.entity.EmploymentData">
+        SELECT *
+        FROM shanxiligong_employment_data
+        <where>
+            deleted = 0
+            <if test="provinceId != null">
+                AND province_id = #{provinceId}
+            </if>
+            <if test="regionId != null">
+                AND region_id = #{regionId}
+            </if>
+            <if test="industryId != null">
+                AND industry_id = #{industryId}
+            </if>
+            <if test="majorId != null">
+                AND major_id = #{majorId}
+            </if>
+            <if test="education != null and education != ''">
+                AND education = #{education}
+            </if>
+            <if test="year != null">
+                AND year = #{year}
+            </if>
+        </where>
+        ORDER BY year DESC, id DESC
+    </select>
+
+    <!-- 管理端分页查询就业数据（支持关键字搜索，关联字典表模糊匹配） -->
+    <select id="selectAdminList" resultType="org.example.backend.entity.EmploymentData">
+        SELECT ed.*
+        FROM shanxiligong_employment_data ed
+        LEFT JOIN shanxiligong_dict_region dr ON ed.region_id = dr.id
+        LEFT JOIN shanxiligong_dict_industry di ON ed.industry_id = di.id
+        LEFT JOIN shanxiligong_dict_major dm ON ed.major_id = dm.id
+        <where>
+            ed.deleted = 0
+            <if test="keyword != null and keyword != ''">
+                AND (dr.name LIKE CONCAT('%', #{keyword}, '%')
+                     OR di.name LIKE CONCAT('%', #{keyword}, '%')
+                     OR dm.name LIKE CONCAT('%', #{keyword}, '%')
+                     OR ed.education LIKE CONCAT('%', #{keyword}, '%'))
+            </if>
+        </where>
+        ORDER BY ed.year DESC, ed.id DESC
+    </select>
+
+</mapper>
+

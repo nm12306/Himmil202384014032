@@ -2,11 +2,12 @@
 
 > Employment in higher education institutions
 > ID：202384014032　|　Progress：WEEK3
-> Add New File：**29** 
+> Add New File：**29**
 
 ## 1.What is this snapshot?
 
-`WEEK3/` This is the **complete project snapshot at the end of WEEK3**: it includes all the source code, configurations, and documentation
+`WEEK3/` This is the **complete project snapshot at the end of WEEK3**: it includes all the source code,
+configurations, and documentation accumulated up to this milestone.
 
 ## 2.Progress Overview
 
@@ -22,25 +23,26 @@
 
 ```text
 WEEK3/
-├─ back-end/                          Spring Boot 4 后端（Maven 工程）
+├─ back-end/                            Spring Boot 4 backend (Maven project)
 │  ├─ src/main/java/org/example/backend/
-│  │  ├─ BackEndApplication.java       Spring Boot 启动类
-│  │  ├─ common/                      Result / PageResult / Constants
-│  │  ├─ config/                      MyBatis-Plus 与 Redis 配置
-│  │  ├─ exception/                   业务异常与全局异常处理
-│  │  └─ util/                        JWT 与 BCrypt 工具
-│  ├─ src/main/resources/application.yml    端口、数据源、Redis、MyBatis-Plus
-│  ├─ src/test/java/org/example/backend/     上下文加载测试
-│  ├─ .mvn/wrapper/                   Maven Wrapper 配置
-│  └─ pom.xml                         Maven 依赖与构建配置
-├─ front-end/                         Vue 2 + Element UI 前端（Vue CLI 5）
-│  ├─ public/                         HTML 模板与站点图标
-│  ├─ src/assets/                     站点 Logo
-│  ├─ package.json / package-lock.json      依赖与依赖锁定
-│  └─ vue.config.js                   开发服务器 8080，代理 /api、/uploads 到 8088
-├─ WEEK3-工作日志.md                   本快照工作日志
-├─ README.md                          本文件
-└─ .gitignore                         依赖、构建产物、IDE、运行时目录
+│  │  ├─ BackEndApplication.java        Spring Boot application class
+│  │  ├─ common/                        Result / PageResult / Constants
+│  │  ├─ config/                        MyBatis-Plus and Redis configuration
+│  │  ├─ exception/                     Business exception and global handler
+│  │  └─ util/                          JWT and BCrypt utilities
+│  ├─ src/main/resources/
+│  │  └─ application.yml                Port, datasource, Redis, MyBatis-Plus
+│  ├─ src/test/java/org/example/backend/  Context load test
+│  └─ pom.xml                           Maven dependencies and build configuration
+├─ front-end/                           Vue 2 + Element UI frontend (Vue CLI 5)
+│  ├─ public/                           HTML template and favicon
+│  ├─ src/assets/                       Site logo
+│  ├─ package.json                      Dependencies and npm scripts
+│  ├─ package-lock.json                 Locked dependency tree
+│  └─ vue.config.js                     Dev server and /api, /uploads proxy
+├─ WEEK3-Work-Log.md                        Daily work log
+├─ README.md                            This file
+└─ .gitignore                           Dependencies, build output, IDE and runtime folders
 ```
 
 ## 4. Running Mode
@@ -58,9 +60,6 @@ WEEK3/
 ### 4.2 Backend
 
 ```bash
-# First run: initialize the database (init.sql is GBK encoded, be sure to use --default-character-set=gbk)
-mysql -uroot -p --default-character-set=gbk < back-end/src/main/resources/sql/init.sql
-
 # Start Redis (needed for login brute-force protection and chart caching)
 redis-server
 
@@ -73,5 +72,4 @@ The database address, username, password, and Redis address are all configured i
 
 ### 4.3 Frontend
 
-The frontend in this snapshot only includes source files up to that day
-
+The frontend in this snapshot only includes the source files added up to this milestone. The entry point (`main.js`), root component (`App.vue`) and router table (`router/index.js`) are assembled in WEEK11, so the frontend cannot be started standalone here; use the `WEEK11/front-end` folder for a runnable frontend.
